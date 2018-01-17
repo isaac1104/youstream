@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import _ from "lodash";
 import { connect } from "react-redux";
 import * as actions from "./../actions";
 import Search from "./Search";
@@ -10,21 +9,32 @@ class VideosContainer extends Component {
   renderVideos = () => {
     const data = this.props.videos.data;
     if (data.length !== 0) {
-      return data.items.map(video => {
-        return (
-          <VideoDetails
-            title={video.snippet.title}
-          />
-        );
-      });
+      return (
+        <div className="row">
+          {data.items.map(video => {
+            return (
+              <VideoDetails
+                key={video.id.videoId}
+                url={video.id.videoId}
+                title={video.snippet.title}
+                desc={video.snippet.description}
+              />
+            );
+          })};
+        </div>
+      )
     }
   }
 
   render () {
     return (
       <div>
-        <Search/>
-        {this.renderVideos()}
+        <div>
+          <Search/>
+        </div>
+        <div style={{marginTop: "40px"}}>
+          {this.renderVideos()}
+        </div>
       </div>
     );
   }

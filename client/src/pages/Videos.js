@@ -4,7 +4,7 @@ import VideosContainer from "./../containers/VideosContainer";
 const Videos = () => {
 
   const style = {
-    margin: "90px 0 0 280px"
+    margin: "90px 0 0 180px"
   }
 
   return (
