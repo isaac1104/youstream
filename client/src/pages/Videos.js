@@ -1,4 +1,5 @@
 import React from "react";
+import VideosContainer from "./../containers/VideosContainer";
 
 const Videos = () => {
 
@@ -8,7 +9,7 @@ const Videos = () => {
 
   return (
     <div style={style}>
-      <h1>Videos</h1>
+      <VideosContainer/>
     </div>
   );
 }

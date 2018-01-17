@@ -5,11 +5,9 @@ import { Field, reduxForm } from "redux-form";
 import * as actions from './../actions';
 import { connect } from 'react-redux';
 
-
 class Search extends Component {
 
   formSubmit = ({ search }) => {
-    console.log(search);
     this.props.fetchVideos(search);
   }
 
