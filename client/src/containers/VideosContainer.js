@@ -5,11 +5,15 @@ import VideoDetails from "./../components/VideoDetails";
 
 class VideosContainer extends Component {
 
+  componentWillUnmount() {
+    this.props.removeVideos();
+  }
+
   renderVideos = () => {
     const data = this.props.videos.data;
     if (data.length !== 0) {
       return (
-        <div className="row align-items-center"
+        <div className="row"
           style={{ justifyContent: "center", alignItems: "center", padding: "20px" }}
         >
           {data.items.map(video => {
