@@ -1,6 +1,6 @@
 .sidenav {
     height: 100%;
-    width: 150px;
+    width: 180px;
     position: fixed;
     z-index: 1;
     top: 60px;
@@ -16,6 +16,7 @@
     font-size: 25px;
     color: #818181;
     display: block;
+    margin: 10px 0 10px 0;
 }
 
 .sidenav a:hover {

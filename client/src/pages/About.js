@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
 
   const style = {
-    margin: "90px 40px 0 200px",
+    margin: "90px 70px 0 230px",
     textAlign: "center"
   }
 
