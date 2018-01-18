@@ -1,17 +1,14 @@
 import React from "react";
 
-const VideoDetails = (props) => {
+const VideoDetails = () => {
 
-  const url = `https://www.youtube.com/embed/${props.url}`;
+  const style = {
+    margin: "90px 0 0 230px"
+  }
 
   return (
-    <div className= "col-md-3" style={{ marginBottom: "40px" }}>
-      <h5>{props.title}</h5>
-      <iframe
-        className="embed-responsive-item"
-        allowFullScreen
-        src={url}
-      />
+    <div style={style}>
+      <h1>Videos</h1>
     </div>
   );
 }

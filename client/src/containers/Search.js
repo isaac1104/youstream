@@ -20,26 +20,24 @@ class Search extends Component {
     }
 
     return (
-      <div style={style}>
-        <form onSubmit={handleSubmit(this.formSubmit)} style={style}>
-          <Field
-            name="search"
-            component={SearchField}
-          />
-          <Button
-            animated
-            color="teal"
-            size="mini"
-            type="submit"
-            disabled={pristine || submitting}>
-            <Button.Content visible>SEARCH</Button.Content>
-            <Button.Content hidden>
-              <Icon name="search"/>
-            </Button.Content>
-          </Button>
-        </form>
-      </div>
-    )
+      <form onSubmit={handleSubmit(this.formSubmit)} style={style}>
+        <Field
+          name="search"
+          component={SearchField}
+        />
+        <Button
+          animated
+          color="teal"
+          size="mini"
+          type="submit"
+          disabled={pristine || submitting}>
+          <Button.Content visible>SEARCH</Button.Content>
+          <Button.Content hidden>
+            <Icon name="search"/>
+          </Button.Content>
+        </Button>
+      </form>
+    );
   }
 }
 

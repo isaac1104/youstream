@@ -1,5 +1,4 @@
 import React from "react";
-import Search from "./../containers/Search";
 import VideosContainer from "./../containers/VideosContainer";
 
 const Videos = () => {
@@ -10,7 +9,6 @@ const Videos = () => {
 
   return (
     <div style={style}>
-      <Search/>
       <VideosContainer/>
     </div>
   );

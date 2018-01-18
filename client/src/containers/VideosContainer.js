@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "./../actions";
-import VideoDetails from "./../components/VideoDetails";
+import VideoLists from "./../components/VideoLists";
 
 class VideosContainer extends Component {
 
@@ -13,16 +13,17 @@ class VideosContainer extends Component {
     const data = this.props.videos.data;
     if (data.length !== 0) {
       return (
-        <div className="row"
-          style={{ justifyContent: "center", alignItems: "center", padding: "20px" }}
-        >
+        <div style={{ justifyContent: "center", alignItems: "center", padding: "20px" }}>
           {data.items.map(video => {
             return (
-              <VideoDetails
+              <VideoLists
                 key={video.id.videoId}
                 url={video.id.videoId}
                 title={video.snippet.title}
                 desc={video.snippet.description}
+                channel={video.snippet.channelTitle}
+                channelUrl={video.snippet.channelId}
+                thumbnail={video.snippet.thumbnails.medium.url}
               />
             );
           })}
@@ -32,6 +33,7 @@ class VideosContainer extends Component {
   }
 
   render () {
+    console.log(this.props.videos.found);
     return (
       <div style={{ marginTop: "20px" }}>
         {this.renderVideos()}
