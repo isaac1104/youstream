@@ -1,14 +1,31 @@
 import React from "react";
 
-const VideoDetails = () => {
+const VideoDetails = (props) => {
 
   const style = {
-    margin: "90px 0 0 230px"
+    margin: "90px 0 0 230px",
+    textAlign: "center"
   }
+
+  const state = props.location.state;
 
   return (
     <div style={style}>
-      <h1>Videos</h1>
+      <h1 style={{ margin: "120px 0 40px 0" }}>{state.title}</h1>
+      <div
+        className="embed-responsive"
+        style={{ width: "1200px", height: "600px", margin: "auto" }}
+      >
+        <iframe
+          className="embed-responsive-item"
+          src={state.url}
+          allowFullScreen
+        />
+      </div>
+      <div style={{ marginTop: "20px" }}>
+        <h3><a href={state.channelUrl}>{state.channel}</a></h3>
+        <h4>{state.desc}</h4>
+      </div>
     </div>
   );
 }

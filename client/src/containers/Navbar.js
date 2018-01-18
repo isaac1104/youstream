@@ -7,10 +7,10 @@ import { Redirect, Link } from "react-router-dom";
 
 class Navbar extends Component {
 
-  renderVideos = () => {
+  renderSearchResults = () => {
     if (this.props.videos.found === true) {
       return (
-        <Redirect to="/videos"/>
+        <Redirect to={`/videos/search`}/>
       );
     }
   }
@@ -21,7 +21,6 @@ class Navbar extends Component {
         height: "80px"
       }
     }
-
     return (
       <div>
         <nav className="navbar navbar-dark fixed-top bg-dark" style={style.navbar}>
@@ -31,7 +30,7 @@ class Navbar extends Component {
           </Link>
           <Search/>
         </nav>
-        {this.renderVideos()}
+        {this.renderSearchResults()}
       </div>
     );
   }
@@ -39,6 +38,7 @@ class Navbar extends Component {
 
 function mapStateToProps(state) {
   return {
+    form: state.form,
     videos: state.videos
   };
 }
