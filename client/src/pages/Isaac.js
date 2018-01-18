@@ -10,7 +10,6 @@ const Isaac = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    justifyContent: "center",
     backgroundImage: `url(/images/la.jpg)`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",

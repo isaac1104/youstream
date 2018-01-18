@@ -10,7 +10,6 @@ const About = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    justifyContent: "center",
     backgroundImage: `url(/images/laptop3.jpg)`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
