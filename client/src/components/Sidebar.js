@@ -8,6 +8,7 @@ const Sidebar = () => {
   return (
     <div className="sidenav">
       <Link to="/about"><Icon name="info circle"/>ABOUT</Link>
+      <Link to="/isaac"><Icon name="user circle outline"/>ISAAC</Link>
     </div>
   );
 }

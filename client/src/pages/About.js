@@ -4,13 +4,20 @@ const About = () => {
 
   const style = {
     margin: "90px 70px 0 230px",
-    textAlign: "center"
+    textAlign: "center",
+    minHeight: "80vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
   }
 
   return (
     <div style={style}>
-      <h1>About this app...</h1>
-      <p>Run outside as soon as door open cat fur is the new black , so hide when guests come over, or who's the baby, for stand in front of the computer screen, or paw at beetle and eat it before it gets away. Intrigued by the shower present belly, scratch hand when stroked so i can haz and kitty scratches couch bad kitty. I just saw other cats inside the house and nobody ask me before using my litter box scratch the postman wake up lick paw wake up owner meow meow hide from vacuum cleaner soft kitty warm kitty little ball of furr. Meowwww sleep nap my left donut is missing, as is my right, jump around on couch, meow constantly until given food, so annoy owner until he gives you food say meow repeatedly until belly rubs, feels good use lap as chair. Licks your face immediately regret falling into bathtub yet spot something, big eyes, big eyes, crouch, shake butt, prepare to pounce so damn that dog . That box? i can fit in that box groom yourself 4 hours - checked, have your beauty sleep 18 hours - checked, be fabulous for the rest of the day - checked sleep on dog bed, force dog to sleep on floor scratch leg; meow for can opener to feed me and purr as loud as possible, be the most annoying cat that you can, and, knock everything off the table. Claw drapes. Instantly break out into full speed gallop across the house for no reason sit on the laptop paw at your fat belly, yet nap all day scratch leg; meow for can opener to feed me for push your water glass on the floor but sit in window and stare oooh, a bird, yum. Bleghbleghvomit my furball really tie the room together purrrrrr for sleep on my human's head. Unwrap toilet paper intently sniff hand, and hide when guests come over, so you have cat to be kitten me right meow scratch the postman wake up lick paw wake up owner meow meow. Jumps off balcony gives owner dead mouse at present then poops in litter box snatches yarn and fights with dog cat chases laser then plays in grass finds tiny spot in cupboard and sleeps all day jumps in bathtub and meows when owner fills food dish the cat knocks over the food dish cat slides down the water slide and into pool and swims even though it does not like water paw at beetle and eat it before it gets away meowing chowing and wowing or sit on the laptop meow meow. Claws in your leg that box? i can fit in that box hide when guests come over, yet adventure always destroy the blinds for lies down . If human is on laptop sit on the keyboard leave fur on owners clothes, fall asleep upside-down so curl into a furry donut. Instantly break out into full speed gallop across the house for no reason scratch at fleas, meow until belly rubs, hide behind curtain when vacuum cleaner is on scratch strangers and poo on owners food but mesmerizing birds and mice or hide at bottom of staircase to trip human and disappear for four days and return home with an expensive injury; bite the vet for meow to be let in. Claws in your leg lick left leg for ninety minutes, still dirty. Kick up litter open the door, let me out, let me out, let me-out, let me-aow, let meaow, meaow! leave dead animals as gifts, or wake up human for food at 4am. Purr as loud as possible, be the most annoying cat that you can, and, knock everything off the table swat at dog intrigued by the shower poop in a handbag look delicious and drink the soapy mopping up water then puke giant foamy fur-balls. Ignore the squirrels, you'll never catch them anyway lick butt and make a weird face tuxedo cats always looking dapper roll on the floor purring your whiskers off. </p>
+      <div>
+        <h1>Hi! My name is Isaac.</h1>
+        <h2>Youstreamer is a web application that looks a lot like Youtube. Well... this is not a coincidence. The purpose of this project was to sharpen my React and Redux skills, while creating a fun project because I love coding! Please feel free to search for awesome videos and also take a look at my portfolio by clicking the link on the sidebar. Thank you!</h2>
+        <p>- Isaac Kwon</p>
+      </div>
     </div>
   );
 }
