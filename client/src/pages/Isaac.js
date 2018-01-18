@@ -3,12 +3,19 @@ import React from "react";
 const Isaac = () => {
 
   const style = {
-    margin: "90px 70px 0 230px",
+    margin: "30px 70px 0 100px",
     textAlign: "center",
-    minHeight: "80vh",
+    minHeight: "100vh",
+    minWidth: "100%",
     display: "flex",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    justifyContent: "center",
+    backgroundImage: `url(/images/la.jpg)`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    padding: "5rem",
+    color: "tomato"
   }
 
   return (
