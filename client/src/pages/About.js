@@ -10,8 +10,7 @@ const About = () => {
     alignItems: "center",
     justifyContent: "center",
     padding: "5rem",
-    color: "#fff",
-    backgroundColor: '#36393f'
+    color: "#fff"
   }
 
   return (
