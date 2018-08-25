@@ -9,8 +9,7 @@ const About = () => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    padding: "5rem",
-    color: "#fff"
+    padding: "5rem"
   }
 
   return (
