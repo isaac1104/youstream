@@ -1,19 +1,21 @@
 const express = require("express");
 const path = require("path");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 const app = express();
 
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
-
-// Send every request to the React app
-// Define any API routes before this runs
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+app.use((err, req, res, next) => {
+  res.status(422).send({ error: err.message });
 });
 
-app.listen(PORT, function() {
+require('./routes/pokemon_data_api')(app);
+
+if (['production', 'ci'].includes(process.env.NODE_ENV)) {
+  app.use(express.static('client/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve('client', 'build', 'index.html'));
+  });
+}
+
+app.listen(PORT, () => {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
