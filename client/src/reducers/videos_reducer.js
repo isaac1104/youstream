@@ -1,4 +1,4 @@
-import { FETCH_VIDEOS, REMOVE_VIDEOS } from "./../actions/types";
+import { REMOVE_VIDEOS } from "./../actions/types";
 
 const initialState = {
   data: [],
@@ -7,12 +7,12 @@ const initialState = {
 
 function videosReducer(state = initialState, action) {
   switch (action.type) {
-    case FETCH_VIDEOS:
-      return {
-        ...state,
-        data: action.payload,
-        found: true
-      };
+    // case FETCH_VIDEOS:
+    //   return {
+    //     ...state,
+    //     data: action.payload,
+    //     found: true
+    //   };
     case REMOVE_VIDEOS:
       return {
         ...state,
