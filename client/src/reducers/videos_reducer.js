@@ -25,11 +25,7 @@ function videosReducer(state = initialState, action) {
         data: action.payload
       };
     case REMOVE_VIDEOS:
-      return {
-        ...state,
-        data: action.payload,
-        found: null
-      };
+      return initialState;
     default:
       return state;
   }

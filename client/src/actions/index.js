@@ -24,7 +24,7 @@ export const fetchVideos = keyword => async dispatch => {
     }
   });
   const { data } = request;
-  if (data.item.length === 0) {
+  if (data.items.length !== 0) {
     dispatch(videoError());
   } else {
     dispatch(receiveVideos(data));

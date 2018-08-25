@@ -33,6 +33,7 @@ class VideosContainer extends Component {
   }
 
   render () {
+    console.log(this.props.videos);
     return (
       <div style={{ marginTop: "20px" }}>
         {this.renderVideos()}
