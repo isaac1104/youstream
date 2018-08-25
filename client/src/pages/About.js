@@ -3,18 +3,15 @@ import React from "react";
 const About = () => {
 
   const style = {
-    margin: "30px 70px 0 100px",
     textAlign: "center",
     minHeight: "100vh",
-    minWidth: "100%",
+    minWidth: "100vw",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    backgroundImage: `url(/images/laptop3.jpg)`,
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
     padding: "5rem",
-    color: "tomato"
+    color: "#fff",
+    backgroundColor: '#36393f'
   }
 
   return (
