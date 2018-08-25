@@ -11,6 +11,11 @@ const receiveVideos = data => ({
   payload: data
 });
 
+const videoError = () => ({
+  type: VIDEO_ERROR,
+  payload: 'VIDEO NOT FOUND!'
+})
+
 export const fetchVideos = keyword => async dispatch => {
   dispatch(requestVideos());
   const request = await axios.get('/api/data', {
@@ -19,8 +24,11 @@ export const fetchVideos = keyword => async dispatch => {
     }
   });
   const { data } = request;
-  console.log(request);
-  dispatch(receiveVideos(data));
+  if (data.item.length === 0) {
+    dispatch(videoError());
+  } else {
+    dispatch(receiveVideos(data));
+  }
 };
 
 export const removeVideos = () => {
