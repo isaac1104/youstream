@@ -21,7 +21,16 @@ class VideosContainer extends Component {
   };
 
   renderVideos = () => {
-    const data = this.props.videos.data;
+    const { data, error, isFetching } = this.props.videos;
+
+    if (error) {
+      return <h1 className='text-center text-danger'>Video Not Found!</h1>;
+    }
+
+    if (isFetching) {
+      return <h1 className='text-center'>Loading...</h1>
+    }
+
     if (data.length !== 0) {
       return (
         <div style={{ justifyContent: "center", alignItems: "center", padding: "20px" }}>
@@ -39,11 +48,11 @@ class VideosContainer extends Component {
             );
           })}
         </div>
-      )
+      );
     }
   };
 
-  render () {
+  render() {
     return (
       <div style={{ marginTop: "90px", marginLeft: '10px' }}>
         {this.renderVideos()}

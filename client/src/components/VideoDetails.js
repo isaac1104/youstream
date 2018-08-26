@@ -7,8 +7,7 @@ const VideoDetails = (props) => {
     textAlign: "center"
   }
 
-  const state = props.location.state;
-
+  const { state } = props.location;
   return (
     <div style={style}>
       <h1 style={{ margin: "120px 0 40px 0" }}>{state.title}</h1>
@@ -20,6 +19,7 @@ const VideoDetails = (props) => {
           className="embed-responsive-item"
           src={state.url}
           allowFullScreen
+          title={state.title}
         />
       </div>
       <div style={{ marginTop: "20px" }}>
