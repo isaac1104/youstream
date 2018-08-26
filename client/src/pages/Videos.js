@@ -9,7 +9,7 @@ const Videos = () => {
 
   return (
     <div style={style}>
-      <VideosContainer/>
+      <VideosContainer />
     </div>
   );
 }

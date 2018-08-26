@@ -9,12 +9,11 @@ import { withRouter } from 'react-router-dom';
 class Search extends Component {
   formSubmit = ({ keyword }) => {
     this.props.fetchVideos(keyword, () => {
-      this.props.history.push(`/search/${keyword}`);
+      this.props.history.push(`/videos/search/${keyword}`);
     });
   }
 
   render() {
-    console.log(this.props.videos);
     const { handleSubmit, pristine, submitting } = this.props;
     const style = {
       display: "flex",
