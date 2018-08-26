@@ -4,14 +4,17 @@ import { Button, Icon } from "semantic-ui-react";
 import { Field, reduxForm } from "redux-form";
 import * as actions from './../actions';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 class Search extends Component {
-
-  formSubmit = ({ search }) => {
-    this.props.fetchVideos(search);
+  formSubmit = ({ keyword }) => {
+    this.props.fetchVideos(keyword, () => {
+      this.props.history.push(`/search/${keyword}`);
+    });
   }
 
   render() {
+    console.log(this.props.videos);
     const { handleSubmit, pristine, submitting } = this.props;
     const style = {
       display: "flex",
@@ -22,7 +25,7 @@ class Search extends Component {
     return (
       <form onSubmit={handleSubmit(this.formSubmit)} style={style}>
         <Field
-          name="search"
+          name="keyword"
           component={SearchField}
         />
         <Button
@@ -41,4 +44,10 @@ class Search extends Component {
   }
 }
 
-export default reduxForm({ form: "search" })(connect(null, actions)(Search));
+function mapStateToProps({ videos }) {
+  return {
+    videos
+  }
+}
+
+export default withRouter(reduxForm({ form: "keyword" })(connect(mapStateToProps, actions)(Search)));

@@ -2,6 +2,7 @@ import { REQUEST_VIDEOS, RECEIVE_VIDEOS, VIDEO_ERROR, REMOVE_VIDEOS } from "./..
 
 const initialState = {
   isFetching: false,
+  error: false,
   data: []
 };
 
@@ -16,13 +17,15 @@ function videosReducer(state = initialState, action) {
       return {
         ...state,
         isFetching: false,
+        error: false,
         data: action.payload
       };
     case VIDEO_ERROR:
       return {
         ...state,
         isFetching: false,
-        data: action.payload
+        error: action.payload,
+        data: []
       };
     case REMOVE_VIDEOS:
       return initialState;

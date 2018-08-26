@@ -3,18 +3,9 @@ import Search from "./../containers/Search";
 import { Icon } from "semantic-ui-react";
 import { connect } from "react-redux";
 import * as actions from "./../actions";
-import { Redirect, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Navbar extends Component {
-
-  renderSearchResults = () => {
-    if (this.props.videos.found === true) {
-      return (
-        <Redirect to={`/videos/search`}/>
-      );
-    }
-  }
-
   render () {
     const style = {
       navbar: {
@@ -30,7 +21,6 @@ class Navbar extends Component {
           </Link>
           <Search/>
         </nav>
-        {this.renderSearchResults()}
       </div>
     );
   }
@@ -38,7 +28,6 @@ class Navbar extends Component {
 
 function mapStateToProps(state) {
   return {
-    form: state.form,
     videos: state.videos
   };
 }
