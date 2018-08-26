@@ -16,7 +16,7 @@ const videoError = () => ({
   payload: true
 });
 
-export const fetchVideos = (keyword, callback) => async dispatch => {
+export const fetchVideos = keyword => async dispatch => {
   dispatch(requestVideos());
   const request = await axios.get('/api/data', {
     params: {
@@ -28,7 +28,6 @@ export const fetchVideos = (keyword, callback) => async dispatch => {
     dispatch(videoError());
   } else {
     dispatch(receiveVideos(data));
-    callback();
   }
 };
 

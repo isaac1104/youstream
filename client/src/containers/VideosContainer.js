@@ -4,10 +4,21 @@ import * as actions from "./../actions";
 import VideoLists from "./../components/VideoLists";
 
 class VideosContainer extends Component {
+  componentDidMount() {
+    const { keyword } = this.props.match.params;
+    this.props.fetchVideos(keyword);
+  };
+
+  componentDidUpdate(prevProps) {
+    const { keyword } = this.props.match.params;
+    if (prevProps.match.params.keyword !== keyword) {
+      this.props.fetchVideos(keyword);
+    }
+  };
 
   componentWillUnmount() {
     this.props.removeVideos();
-  }
+  };
 
   renderVideos = () => {
     const data = this.props.videos.data;
@@ -30,12 +41,11 @@ class VideosContainer extends Component {
         </div>
       )
     }
-  }
+  };
 
   render () {
-    console.log(this.props);
     return (
-      <div style={{ marginTop: "20px" }}>
+      <div style={{ marginTop: "90px", marginLeft: '10px' }}>
         {this.renderVideos()}
       </div>
     );

@@ -8,10 +8,8 @@ import { withRouter } from 'react-router-dom';
 
 class Search extends Component {
   formSubmit = ({ keyword }) => {
-    this.props.fetchVideos(keyword, () => {
-      this.props.history.push(`/videos/search/${keyword}`);
-    });
-  }
+    this.props.history.push(`/videos/search/${keyword}`);
+  };
 
   render() {
     const { handleSubmit, pristine, submitting } = this.props;
